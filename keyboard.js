@@ -2,8 +2,8 @@ let counter = 0
 let text = ''
 
 // mapping of which keys fire a 1 and which keys fire a 0
-const ZERO = ['1', '2', '3', '4', '5', '6', 'q', 'w', 'e', 'r', 't', 'y', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b']
-const ONE =['7', '8', '9', '0', '-', '=', 'u', 'i', 'o', 'p', ']', ']', '\\', 'h', 'j', 'k', 'l', ';', '\'', 'n', 'm', ',', '.', '/']
+const ONE = ['1', '2', '3', '4', '5', '6', 'q', 'w', 'e', 'r', 't', 'y', 'a', 's', 'd', 'f', 'g', 'z', 'x', 'c', 'v', 'b']
+const ZERO =['7', '8', '9', '0', '-', '=', 'u', 'i', 'o', 'p', ']', ']', '\\', 'h', 'j', 'k', 'l', ';', '\'', 'n', 'm', ',', '.', '/']
 
 let timeWindow = 50; // time in ms
 let lastExecution = new Date((new Date()).getTime() - timeWindow);
