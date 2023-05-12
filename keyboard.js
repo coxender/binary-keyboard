@@ -71,7 +71,7 @@ document.addEventListener("keydown", (event) => {
 
   // let backspace rapid fire
   if (key === "backspace" || key === "delete") {
-    counter = Math.max(counter--, 0);
+    counter = Math.max(counter - 1, 0);
     text = text.slice(0, -1);
   }
 
