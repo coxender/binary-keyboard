@@ -92,10 +92,18 @@ document.addEventListener("keydown", (event) => {
     counter = 0;
     // get last byte
     let int = parseInt(text.slice(-8), 2);
-    let byte = String.fromCharCode(int);
-    text = text.slice(0, -8);
-    console.log(byte);
-    text += byte;
+
+    // backspace character
+    if (int == 8) {
+      // remove byte plus previous
+      text = text.slice(0, -9);
+      counter = Math.max(counter - 1, 0);
+    } else {
+      let byte = String.fromCharCode(int);
+      text = text.slice(0, -8);
+      console.log(byte);
+      text += byte;
+    }
   }
   console.log(counter);
   textbox.innerHTML = text;
