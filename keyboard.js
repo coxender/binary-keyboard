@@ -102,6 +102,10 @@ document.addEventListener("keydown", (event) => {
       // remove previous character
       text = text.slice(0, -1);
       counter = Math.max(counter - 1, 0);
+    } else if (int == 42) {
+      navigator.clipboard.writeText(textbox.value);
+      // Alert the copied text
+      inputText = "Copied to Clipboard";
     } else {
       let byte = String.fromCharCode(int);
       inputText = inputText.slice(0, -8);
