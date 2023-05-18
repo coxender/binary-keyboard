@@ -64,15 +64,19 @@ document.addEventListener("keydown", (event) => {
 
   // get text
   let textbox = document.querySelector("#textbox");
+  let input = document.querySelector("#input");
+
   text = textbox.innerHTML;
-  if (text === "Type Here!") {
-    text = "";
+  inputText = input.innerHTML;
+
+  if (inputText === "Type Here!" || inputText === "Copied to Clipboard") {
+    inputText = "";
   }
 
   // let backspace rapid fire
   if (key === "backspace" || key === "delete") {
     counter = Math.max(counter - 1, 0);
-    text = text.slice(0, -1);
+    inputText = inputText.slice(0, -1);
   }
 
   // prevent multiple keys from firing at the same time
@@ -81,32 +85,33 @@ document.addEventListener("keydown", (event) => {
   if (keysPressed != 1) return;
 
   if (keysPressed == 1 && ZERO.includes(key)) {
-    text += "0";
+    inputText += "0";
     counter++;
   } else if (keysPressed == 1 && ONE.includes(key)) {
-    text += "1";
+    inputText += "1";
     counter++;
   }
 
   if (counter === 8) {
     counter = 0;
     // get last byte
-    let int = parseInt(text.slice(-8), 2);
-
+    let int = parseInt(inputText, 2);
+    inputText = inputText.slice(0, -8);
     // backspace character
     if (int == 8) {
-      // remove byte plus previous
-      text = text.slice(0, -9);
+      // remove previous character
+      text = text.slice(0, -1);
       counter = Math.max(counter - 1, 0);
     } else {
       let byte = String.fromCharCode(int);
-      text = text.slice(0, -8);
+      inputText = inputText.slice(0, -8);
       console.log(byte);
       text += byte;
     }
   }
   console.log(counter);
   textbox.innerHTML = text;
+  input.innerHTML = inputText;
 });
 
 document.addEventListener("keyup", (event) => {
