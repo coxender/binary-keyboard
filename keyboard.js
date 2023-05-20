@@ -116,6 +116,8 @@ document.addEventListener("keydown", (event) => {
   console.log(counter);
   textbox.innerHTML = text;
   input.innerHTML = inputText;
+
+  document.documentElement.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
 });
 
 document.addEventListener("keyup", (event) => {
