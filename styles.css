@@ -1,7 +1,6 @@
 body {
     font-family: monospace;
     min-height: 100svh;
-    max-height: 100w;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 1fr auto;
