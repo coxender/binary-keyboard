@@ -56,18 +56,18 @@ const ZERO = [
 let timeWindow = 50; // time in ms
 let keysPressed = 0;
 
+// get text
+const textbox = document.querySelector("#textbox");
+const input = document.querySelector("#input");
+
 document.addEventListener("keydown", (event) => {
   keysPressed++;
 
   // get key
-  key = event.key.toLowerCase();
+  const key = event.key.toLowerCase();
 
-  // get text
-  let textbox = document.querySelector("#textbox");
-  let input = document.querySelector("#input");
-
-  text = textbox.innerHTML;
-  inputText = input.innerHTML;
+  let text = textbox.innerHTML;
+  let inputText = input.innerHTML;
 
   if (inputText === "Type Here!" || inputText === "Copied to Clipboard") {
     inputText = "";
