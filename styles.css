@@ -16,4 +16,5 @@ body {
 #input {
     text-align: left;
     padding: 18px;
+    min-height: 1lh;
 }
