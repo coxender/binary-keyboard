@@ -1,18 +1,19 @@
-body{
+body {
     font-family: monospace;
-    min-height:100svh;
-    max-height:100w;
+    min-height: 100svh;
+    max-height: 100w;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 1fr auto;
-    font-size:150px;
+    font-size: 150px;
 }
 
-#textbox{
+#textbox {
     text-align: left;
     overflow-wrap: break-word;
 }
-#input{
+
+#input {
     text-align: left;
     padding: 18px;
 }
